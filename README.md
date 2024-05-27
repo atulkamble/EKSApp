@@ -1,6 +1,12 @@
 # EKSDeployment
 EKS Deployment on AWS
 
+## Use Code
+```
+git clone
+cd EKSDeployment
+```
+
 // eksctl
 
 Tip: Open Cloud Shell and Use to save time
