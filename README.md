@@ -177,3 +177,39 @@ Please be cautious when running these commands as they will remove all deploymen
 ```
 eksctl delete cluster --name mycluster
 ```
+## History
+```
+    1  eksctl create cluster --name mycluster --version 1.17 --region us-east-1 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
+    2  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    3  sudo mv /tmp/eksctl /usr/local/bin
+    4  eksctl version
+    5  eksctl create cluster --name mycluster --version 1.17 --region us-east-1 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
+    6  eksctl create cluster --name mycluster --version 1.30 --region us-east-1 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
+    7  kubectl get nodes
+    8  kubectk get pods
+    9  kubectl get pods
+   10  kubectl get ns
+   11  eksctl delete cluster --name mycluster
+   12  clear
+   13  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+   14  sudo mv /tmp/eksctl /usr/local/bin
+   15  eksctl version
+   16  eksctl create cluster --name mycluster --version 1.30 --region us-east-1 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
+   17  kubectl get nodes
+   18  kubectl get pods
+   19  kubectk get ns
+   20  touch deployment.yaml
+   21  nano deployment.yaml
+   22  kubectl apply -f deployment.yaml
+   23  kubectl apply -f service.yaml
+   24  touch service.yaml
+   25  nano service.yaml
+   26  kubectl apply -f service.yaml
+   27  kubectl get pods
+   28  kubectl get services
+   29  kubectl delete deployment --all
+   30  kubectl delete service --all
+   31  kubectl delete pod --all
+   32  eksctl delete cluster --name mycluster
+   33  history
+```
