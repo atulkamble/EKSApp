@@ -3,7 +3,7 @@ EKS Deployment on AWS
 
 ## Use Code
 ```
-git clone
+git clone https://github.com/atulkamble/EKSDeployment.git
 cd EKSDeployment
 ```
 
