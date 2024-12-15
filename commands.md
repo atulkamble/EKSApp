@@ -38,5 +38,59 @@ kubectl delete -f nginx-service.yaml
 kubectl delete -f nginx-deployment.yaml
 kubectl get deployments
 kubectl get services
+
+
+kubectl get deployment nginx-deployment
+
+kubectl scale deployment nginx-deployment --replicas=5
+
+kubectl get deployment nginx-deployment
+kubectl get pods -l app=nginx
+
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl get deployment -n kube-system metrics-server
+
+// hpa
+
+kubectl autoscale deployment nginx-deployment --cpu-percent=50 --min=2 --max=10
+kubectl get hpa
+kubectl run -i --tty load-generator --image=busybox -- /bin/sh -c "while true; do wget -q -O- http://nginx-service; done"
+
+// test hpa
+
+kubectl run -i --tty load-generator --image=busybox -- /bin/sh -c "while true; do wget -q -O- http://nginx-service; done"
+kubectl get hpa -w
+
+
+// node scaling 
+
+eksctl scale nodegroup \
+  --cluster assignment-cluster \
+  --name standard-workers \
+  --nodes-min 2 \
+  --nodes-max 5
+
+eksctl get nodegroup --cluster assignment-cluster
+
+sudo nano stress-deployment.yaml
+
+kubectl get nodes -w
+
+// clean up
+
+kubectl delete hpa nginx-deployment
+kubectl delete -f stress-deployment.yaml
+
+// reset node scaling
+
+eksctl scale nodegroup \
+  --cluster assignment-cluster \
+  --name standard-workers \
+  --nodes-min 2 \
+  --nodes-max 2
+
+kubectl get hpa
+kubectl get nodes -w
 ```
 
