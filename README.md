@@ -1,5 +1,17 @@
 # EKSDeployment
-EKS Deployment on AWS
+Create an Amazon EKS Cluster, connect to it, and access it using AWS CloudShell, follow the steps below:
+
+## **Steps to Set Up an EKS Cluster Using AWS CloudShell**
+
+### **Step 1: Launch AWS CloudShell**
+1. Log in to the AWS Management Console.
+2. Open **CloudShell** from the top-right navigation bar.
+3. Ensure you are in the AWS region where you want to create the EKS cluster.
+
+---
+
+### **Step 2: Install Prerequisite Tools**
+CloudShell already includes `aws-cli` and `kubectl`, but `eksctl` might need to be installed.
 
 ## Use Code
 ```
@@ -7,18 +19,37 @@ git clone https://github.com/atulkamble/EKSDeployment.git
 cd EKSDeployment
 ```
 
-// eksctl
+1. **Check if `aws-cli` is installed**:
+   ```bash
+   aws --version
+   ```
 
+2. **Check if `kubectl` is installed**:
+   ```bash
+   kubectl version --client
+   ```
+
+3. **Install `eksctl` (if not already installed)**:
+   ```bash
+   curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+   sudo mv /tmp/eksctl /usr/local/bin
+   eksctl version
+   ```
+
+   
+// eksctl
+```
 Tip: Open Cloud Shell and Use to save time
 
 Ref: https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html
-
+```
 1) // install eksctl
+```
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
-
-2) // Create EKS Cluster
+```
+3) // Create EKS Cluster
 eksctl create cluster \
 --name mycluster \
 --version 1.30 \
@@ -27,7 +58,7 @@ eksctl create cluster \
 --node-type t2.micro \
 --nodes 2
 
-3) // Try Deployment and create services as well
+4) // Try Deployment and create services as well
 
 In Kubernetes, deployments and services are fundamental concepts used to manage and expose your application. Below is a basic overview of each, including syntax and explanations.
 
