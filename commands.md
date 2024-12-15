@@ -16,4 +16,6 @@ eksctl create cluster \
 --nodes 2
 
 kubectl get nodes
+
+touch nginx-deployment.yaml
 ```
