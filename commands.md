@@ -18,4 +18,9 @@ eksctl create cluster \
 kubectl get nodes
 
 touch nginx-deployment.yaml
+sudo nano nginx-deployment.yaml
+kubectl apply -f nginx-deployment.yaml
+kubectl get deployments
+kubectl get pods -l app=nginx
 ```
+
