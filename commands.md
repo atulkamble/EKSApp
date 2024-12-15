@@ -22,5 +22,11 @@ sudo nano nginx-deployment.yaml
 kubectl apply -f nginx-deployment.yaml
 kubectl get deployments
 kubectl get pods -l app=nginx
+
+touch nginx-service.yaml
+sudo nano nginx-service.yaml
+kubectl apply -f nginx-service.yaml
+kubectl get services
+
 ```
 
