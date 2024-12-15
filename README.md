@@ -97,3 +97,12 @@ kubectl get hpa
 kubectl get nodes -w
 ```
 
+// Tip
+
+1. Delete NODE GROUP
+2. delete Cluster
+3. delete nat gateway
+4. release elastic ip
+5. delete cloudformation stack
+6. delete vpc
+
