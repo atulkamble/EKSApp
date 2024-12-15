@@ -30,5 +30,13 @@ kubectl get services
 
 // open browser
 http://ab86d441fbf5741fd9f3a067a07f3e92-876380523.us-east-1.elb.amazonaws.com/
+
+kubectl get deployments
+kubectl get pods
+kubectl get services
+kubectl delete -f nginx-service.yaml
+kubectl delete -f nginx-deployment.yaml
+kubectl get deployments
+kubectl get services
 ```
 
