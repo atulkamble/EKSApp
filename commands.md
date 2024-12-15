@@ -28,5 +28,7 @@ sudo nano nginx-service.yaml
 kubectl apply -f nginx-service.yaml
 kubectl get services
 
+// open browser
+http://ab86d441fbf5741fd9f3a067a07f3e92-876380523.us-east-1.elb.amazonaws.com/
 ```
 
